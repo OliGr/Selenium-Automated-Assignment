@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class Assignment1 {
 
     WebDriver driver;
+    NewAddressPage newAddressPage;
 
     @Given("user opens https://prod-kurs.coderslab.pl/index.php")
     public void openPrestaShop(){
@@ -48,7 +49,12 @@ public class Assignment1 {
     }
     @And("user fills in alias (.*)")
     public void inputAlias(String Alias){
+        newAddressPage = new NewAddressPage(driver);
         NewAddressPage.aliasInput(Alias);
+    }
+    @And("user fills in address (.*)")
+    public void inputAddress1(String Address){
+        NewAddressPage.address1Input(Address);
     }
 
 }

@@ -13,7 +13,7 @@ public class NewAddressPage {
     public static WebElement aliasInput;
 
     @FindBy(name = "address1")
-    WebElement address1Input;
+    public static WebElement address1Input;
 
     @FindBy(name = "postcode")
     WebElement postcodeInput;
@@ -35,4 +35,7 @@ public class NewAddressPage {
         aliasInput.sendKeys(Alias);
     }
 
+    public static void address1Input(String Address) {
+        address1Input.sendKeys(Address);
+    }
 }
