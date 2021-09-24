@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Assignment1 {
 
-    NewAddressPage newAddressPage;
     WebDriver driver;
 
     @Given("user opens https://prod-kurs.coderslab.pl/index.php")

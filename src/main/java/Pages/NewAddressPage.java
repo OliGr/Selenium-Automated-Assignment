@@ -10,7 +10,7 @@ public class NewAddressPage {
     private WebDriver driver;
 
     @FindBy(name = "alias")
-    private static WebElement aliasInput;
+    public static WebElement aliasInput;
 
     @FindBy(name = "address1")
     WebElement address1Input;
@@ -31,7 +31,7 @@ public class NewAddressPage {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
-    public void aliasInput(String Alias){
+    public static void aliasInput(String Alias){
         aliasInput.sendKeys(Alias);
     }
 
