@@ -3,11 +3,13 @@ package Steps;
 import Pages.NewAddressPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
@@ -56,5 +58,37 @@ public class Assignment1 {
     public void inputAddress1(String Address){
         NewAddressPage.address1Input(Address);
     }
+    @And("user fills in zip/postal code (.*)")
+    public void inputZipPostalCode(String ZipPostalCode){
+        NewAddressPage.postCodeInput(ZipPostalCode);
+    }
+    @And("user fills in city (.*)")
+    public void inputCity(String City){
+        NewAddressPage.cityInput(City);
+    }
+    @And("user fills in country (.*)")
+    public void inputCountry(String Country){
+        NewAddressPage.countryInput(Country);
+    }
+    @And("user fills in phone (.*)")
+    public void inputPhone(String Phone){
+        NewAddressPage.phoneInput(Phone);
+    }
 
+    @And("user saves new address")
+    public void saveAddress(){
+        NewAddressPage.saveAddress();
+    }
+
+    @Then("user has added new address")
+    public void addedAddress(){
+        WebElement addedAddress = driver.findElement(By.id("notifications"));
+        assertEquals("Address successfully added!", addedAddress.getText());
+        System.out.println("Test completed successfully");
+    }
+
+    @And("user quits browsing")
+    public void shutDown(){
+        driver.quit();
+    }
 }

@@ -12,7 +12,7 @@ Feature: adding new address to user account
 
     And user fills in address <Address>
 
-    And user fills in zip/postal code <Zip/Postal Code>
+    And user fills in zip/postal code <ZipPostalCode>
 
     And user fills in city <City>
 
@@ -20,12 +20,14 @@ Feature: adding new address to user account
 
     And user fills in phone <Phone>
 
-    Then user saves new address
+    And user saves new address
+
+    Then user has added new address
 
     And user quits browsing
 
     Examples:
 
-      | Alias | Company       | VAT number | Address                 | Address Complement | Zip/Postal Code | City   | Country        | Phone   |
-      | qwer  | Askawa sp. pl | 1234566    | Wwalekaowea Street 2/21 |                    | 11-233          | Oksaal | United Kingdom | 1234566 |
+      | Alias | Company       | VAT number | Address                 | Address Complement | ZipPostalCode | City   | Country        | Phone   |
+      | qwer  | Askawa sp. pl | 1234566    | Wwalekaowea Street 2/21 |                    | 11-233        | Oksaal | United Kingdom | 1234566 |
 

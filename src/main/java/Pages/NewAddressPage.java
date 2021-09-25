@@ -1,5 +1,6 @@
 package Pages;
 
+import com.sun.org.apache.bcel.internal.classfile.Code;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,16 +17,19 @@ public class NewAddressPage {
     public static WebElement address1Input;
 
     @FindBy(name = "postcode")
-    WebElement postcodeInput;
+    public static WebElement postCodeInput;
 
     @FindBy(name = "city")
-    WebElement cityInput;
+    public static WebElement cityInput;
 
     @FindBy(name = "id_country")
-    WebElement countryInput;
+    public static WebElement countryInput;
 
     @FindBy(name = "phone")
-    WebElement phoneInput;
+    public static WebElement phoneInput;
+
+    @FindBy(className = "btn-primary")
+    public static WebElement saveAddress;
 
     public NewAddressPage(WebDriver driver) {
         this.driver = driver;
@@ -37,5 +41,25 @@ public class NewAddressPage {
 
     public static void address1Input(String Address) {
         address1Input.sendKeys(Address);
+    }
+
+    public static void postCodeInput(String ZipPostalCode){
+        postCodeInput.sendKeys(ZipPostalCode);
+    }
+
+    public static void cityInput(String City){
+        cityInput.sendKeys(City);
+    }
+
+    public static void countryInput(String Country){
+        countryInput.sendKeys(Country);
+    }
+
+    public static void phoneInput(String Phone){
+        phoneInput.sendKeys(Phone);
+    }
+
+    public static void saveAddress(){
+        saveAddress.click();
     }
 }
