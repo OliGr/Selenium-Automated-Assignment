@@ -2,7 +2,7 @@ Feature: adding new address to user account
 
   Scenario Outline: user can add new address to their account
 
-    Given user opens https://prod-kurs.coderslab.pl/index.php
+    Given user opens https://mystore-testlab.coderslab.pl/
 
     And user signs in
 

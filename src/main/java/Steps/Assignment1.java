@@ -18,7 +18,7 @@ public class Assignment1 {
     WebDriver driver;
     NewAddressPage newAddressPage;
 
-    @Given("user opens https://prod-kurs.coderslab.pl/index.php")
+    @Given("user opens https://mystore-testlab.coderslab.pl/")
     public void openPrestaShop(){
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/drivers/chromedriver.exe");
@@ -26,7 +26,7 @@ public class Assignment1 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://prod-kurs.coderslab.pl/index.php");
+        driver.get("https://mystore-testlab.coderslab.pl/");
 
     }
 
