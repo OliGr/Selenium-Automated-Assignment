@@ -44,7 +44,7 @@ public class Assignment1 {
     }
     @When("user opens addresses page")
     public void addNewAddress(){
-        WebElement addAddress = driver.findElement(By.id("address-link"));
+        WebElement addAddress = driver.findElement(By.xpath("/html/body/main/section/div/div/section/section/div/div/a[2]"));
         addAddress.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
